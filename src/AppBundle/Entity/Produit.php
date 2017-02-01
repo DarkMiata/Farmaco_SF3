@@ -20,7 +20,26 @@ class Produit
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="symptome", mappedBy="produit")
+     */
+    private $symptome;  
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="recette", mappedBy="produit")
+     */
+    private $recette;
+    
+// =================================
+    
+    /**
+     * @ORM\JoinColumn(name="categorie_id")
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     */
+    private $categorie;
+// =================================  
+    
     /**
      * @var string
      *

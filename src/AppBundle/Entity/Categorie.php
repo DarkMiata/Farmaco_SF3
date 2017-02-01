@@ -22,6 +22,11 @@ class Categorie
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="produit", mappedBy="categorie")
+     */
+    private $produit;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)

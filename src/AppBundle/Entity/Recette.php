@@ -22,6 +22,35 @@ class Recette
     private $id;
 
     /**
+     * @ORM\JoinColumn(name="utilisateur_id")
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     */
+    private $utilisateur;
+
+    /**
+     * @ORM\JoinColumn(name="symptome_id")
+     * @ORM\ManyToMany(targetEntity="Symptome")
+     */
+    private $symptome;
+    
+// ================================= 
+    
+    /**
+     * @ORM\JoinColumn(name="produit_id")
+     * @ORM\ManyToMany(targetEntity="Produit")
+     */
+    private $produit;
+    
+// ================================= 
+    /**
+     * @ORM\JoinColumn(name="categorie_id")
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     */
+    private $categorie;
+    
+// =================================     
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)

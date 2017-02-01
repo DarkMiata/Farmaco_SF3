@@ -22,6 +22,18 @@ class Symptome
     private $id;
 
     /**
+     * @ORM\JoinColumn(name="produit_id")
+     * @ORM\ManyToMany(targetEntity="Produit")
+     */
+    private $produit;
+      
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="recette", mappedBy="symptome")
+     */
+    private $recette;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=128, unique=true)

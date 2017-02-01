@@ -22,6 +22,11 @@ class Utilisateur
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="recette", mappedBy="utilisateur")
+     */
+    private $recette;
+    
+    /**
      * @var string
      *
      * @ORM\Column(name="pseudo", type="string", length=255)
