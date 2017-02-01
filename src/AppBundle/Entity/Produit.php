@@ -22,19 +22,19 @@ class Produit
     private $id;
     
     /**
-     * @ORM\ManyToMany(targetEntity="symptome", mappedBy="produit")
+     * @ORM\ManyToMany(targetEntity="Symptome", mappedBy="produit")
      */
     private $symptome;  
     
     /**
-     * @ORM\ManyToMany(targetEntity="recette", mappedBy="produit")
+     * @ORM\ManyToMany(targetEntity="Recette", mappedBy="produit")
      */
     private $recette;
     
 // =================================
     
     /**
-     * @ORM\JoinColumn(name="categorie_id")
+     * @ORM\JoinTable(name="categorie_id")
      * @ORM\ManyToOne(targetEntity="Categorie")
      */
     private $categorie;

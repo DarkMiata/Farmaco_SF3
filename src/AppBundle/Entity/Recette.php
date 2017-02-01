@@ -22,13 +22,13 @@ class Recette
     private $id;
 
     /**
-     * @ORM\JoinColumn(name="utilisateur_id")
+     * @ORM\JoinTable(name="utilisateur_id")
      * @ORM\ManyToOne(targetEntity="Utilisateur")
      */
     private $utilisateur;
 
     /**
-     * @ORM\JoinColumn(name="symptome_id")
+     * @ORM\JoinTable(name="symptome_id")
      * @ORM\ManyToMany(targetEntity="Symptome")
      */
     private $symptome;
@@ -36,7 +36,7 @@ class Recette
 // ================================= 
     
     /**
-     * @ORM\JoinColumn(name="produit_id")
+     * @ORM\JoinTable(name="produit_id")
      * @ORM\ManyToMany(targetEntity="Produit")
      */
     private $produit;

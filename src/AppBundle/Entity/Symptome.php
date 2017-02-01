@@ -22,14 +22,14 @@ class Symptome
     private $id;
 
     /**
-     * @ORM\JoinColumn(name="produit_id")
+     * @ORM\JoinTable(name="produit_id")
      * @ORM\ManyToMany(targetEntity="Produit")
      */
     private $produit;
       
     
     /**
-     * @ORM\ManyToMany(targetEntity="recette", mappedBy="symptome")
+     * @ORM\ManyToMany(targetEntity="Recette", mappedBy="symptome")
      */
     private $recette;
     

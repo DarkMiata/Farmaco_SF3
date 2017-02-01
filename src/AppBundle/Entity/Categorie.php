@@ -22,7 +22,7 @@ class Categorie
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="produit", mappedBy="categorie")
+     * @ORM\OneToMany(targetEntity="Produit", mappedBy="categorie")
      */
     private $produit;
     

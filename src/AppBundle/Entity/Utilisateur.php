@@ -9,7 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="utilisateur")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UtilisateurRepository")
- */0
+ */
+
 class Utilisateur
 {
     /**
@@ -22,7 +23,7 @@ class Utilisateur
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="recette", mappedBy="utilisateur")
+     * @ORM\OneToMany(targetEntity="Recette", mappedBy="utilisateur")
      */
     private $recette;
     
