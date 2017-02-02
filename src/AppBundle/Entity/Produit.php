@@ -112,4 +112,104 @@ class Produit
     {
         return $this->description;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->symptome = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->recette = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add symptome
+     *
+     * @param \AppBundle\Entity\Symptome $symptome
+     *
+     * @return Produit
+     */
+    public function addSymptome(\AppBundle\Entity\Symptome $symptome)
+    {
+        $this->symptome[] = $symptome;
+
+        return $this;
+    }
+
+    /**
+     * Remove symptome
+     *
+     * @param \AppBundle\Entity\Symptome $symptome
+     */
+    public function removeSymptome(\AppBundle\Entity\Symptome $symptome)
+    {
+        $this->symptome->removeElement($symptome);
+    }
+
+    /**
+     * Get symptome
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSymptome()
+    {
+        return $this->symptome;
+    }
+
+    /**
+     * Add recette
+     *
+     * @param \AppBundle\Entity\Recette $recette
+     *
+     * @return Produit
+     */
+    public function addRecette(\AppBundle\Entity\Recette $recette)
+    {
+        $this->recette[] = $recette;
+
+        return $this;
+    }
+
+    /**
+     * Remove recette
+     *
+     * @param \AppBundle\Entity\Recette $recette
+     */
+    public function removeRecette(\AppBundle\Entity\Recette $recette)
+    {
+        $this->recette->removeElement($recette);
+    }
+
+    /**
+     * Get recette
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRecette()
+    {
+        return $this->recette;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categorie $categorie
+     *
+     * @return Produit
+     */
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
 }

@@ -122,4 +122,128 @@ class Recette
     {
         return $this->description;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->symptome = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->produit = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \AppBundle\Entity\Utilisateur $utilisateur
+     *
+     * @return Recette
+     */
+    public function setUtilisateur(\AppBundle\Entity\Utilisateur $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \AppBundle\Entity\Utilisateur
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+
+    /**
+     * Add symptome
+     *
+     * @param \AppBundle\Entity\Symptome $symptome
+     *
+     * @return Recette
+     */
+    public function addSymptome(\AppBundle\Entity\Symptome $symptome)
+    {
+        $this->symptome[] = $symptome;
+
+        return $this;
+    }
+
+    /**
+     * Remove symptome
+     *
+     * @param \AppBundle\Entity\Symptome $symptome
+     */
+    public function removeSymptome(\AppBundle\Entity\Symptome $symptome)
+    {
+        $this->symptome->removeElement($symptome);
+    }
+
+    /**
+     * Get symptome
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSymptome()
+    {
+        return $this->symptome;
+    }
+
+    /**
+     * Add produit
+     *
+     * @param \AppBundle\Entity\Produit $produit
+     *
+     * @return Recette
+     */
+    public function addProduit(\AppBundle\Entity\Produit $produit)
+    {
+        $this->produit[] = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Remove produit
+     *
+     * @param \AppBundle\Entity\Produit $produit
+     */
+    public function removeProduit(\AppBundle\Entity\Produit $produit)
+    {
+        $this->produit->removeElement($produit);
+    }
+
+    /**
+     * Get produit
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduit()
+    {
+        return $this->produit;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categorie $categorie
+     *
+     * @return Recette
+     */
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
 }

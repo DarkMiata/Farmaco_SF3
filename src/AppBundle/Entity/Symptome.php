@@ -105,4 +105,80 @@ class Symptome
     {
         return $this->description;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->produit = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->recette = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add produit
+     *
+     * @param \AppBundle\Entity\Produit $produit
+     *
+     * @return Symptome
+     */
+    public function addProduit(\AppBundle\Entity\Produit $produit)
+    {
+        $this->produit[] = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Remove produit
+     *
+     * @param \AppBundle\Entity\Produit $produit
+     */
+    public function removeProduit(\AppBundle\Entity\Produit $produit)
+    {
+        $this->produit->removeElement($produit);
+    }
+
+    /**
+     * Get produit
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduit()
+    {
+        return $this->produit;
+    }
+
+    /**
+     * Add recette
+     *
+     * @param \AppBundle\Entity\Recette $recette
+     *
+     * @return Symptome
+     */
+    public function addRecette(\AppBundle\Entity\Recette $recette)
+    {
+        $this->recette[] = $recette;
+
+        return $this;
+    }
+
+    /**
+     * Remove recette
+     *
+     * @param \AppBundle\Entity\Recette $recette
+     */
+    public function removeRecette(\AppBundle\Entity\Recette $recette)
+    {
+        $this->recette->removeElement($recette);
+    }
+
+    /**
+     * Get recette
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRecette()
+    {
+        return $this->recette;
+    }
 }
