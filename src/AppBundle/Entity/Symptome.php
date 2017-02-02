@@ -182,6 +182,9 @@ class Symptome
         return $this->recette;
     }
     
-
+    public function __toString() {
+      return $this->nom;
+    }
+    
     
 }
