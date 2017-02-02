@@ -9,27 +9,27 @@
 namespace AppBundle\DTO;
 
 /**
- * Description of FiltreRecetteParSymptomeProduit
+ * Description of FiltrelProduitParSymptomeCategorieDTO
  *
  * @author Formation
  */
-class FiltreRecetteParSymptomeProduitDTO {
+class FiltrelProduitParSymptomeCategorieDTO {
   private $symptome;
-  private $produit;
+  private $categorie;
   
   function getSymptome() {
     return $this->symptome;
   }
 
-  function getProduit() {
-    return $this->produit;
+  function getCategorie() {
+    return $this->categorie;
   }
 
   function setSymptome($symptome) {
     $this->symptome = $symptome;
   }
 
-  function setProduit($produit) {
-    $this->produit = $produit;
+  function setCategorie($categorie) {
+    $this->categorie = $categorie;
   }
 }

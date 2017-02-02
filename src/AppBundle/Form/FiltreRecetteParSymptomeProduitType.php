@@ -17,8 +17,9 @@ class FiltreRecetteParSymptomeProduitType extends \Symfony\Component\Form\Abstra
   
   public function buildForm(\Symfony\Component\Form\FormBuilderInterface $builder, array $options) {
     $builder
-      ->add("symptome", \Symfony\Bridge\Doctrine\Form\Type\EntityType::class, ["class"=>"AppBundle:Symptome"])
-      ->add("produit", \Symfony\Bridge\Doctrine\Form\Type\EntityType::class, ["class"=>"AppBundle:Produit"]);
+      ->add("symptome", \Symfony\Bridge\Doctrine\Form\Type\EntityType::class, ["class"=>"AppBundle:Symptome", "required"=>FALSE])
+      ->add("produit", \Symfony\Bridge\Doctrine\Form\Type\EntityType::class, ["class"=>"AppBundle:Produit", "required"=>FALSE])
+      ->add("submit", \Symfony\Component\Form\Extension\Core\Type\SubmitType::class);
   }
 
 }
