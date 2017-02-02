@@ -22,8 +22,8 @@ class Symptome
     private $id;
 
     /**
-     * @ORM\JoinTable(name="produit_id")
-     * @ORM\ManyToMany(targetEntity="Produit")
+     * @ORM\JoinTable(name="symptome_produit")
+     * @ORM\ManyToMany(targetEntity="Produit", inversedBy="symptome")
      */
     private $produit;
       
@@ -181,4 +181,7 @@ class Symptome
     {
         return $this->recette;
     }
+    
+
+    
 }

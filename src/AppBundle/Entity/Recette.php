@@ -23,21 +23,21 @@ class Recette
 
     /**
      * @ORM\JoinTable(name="utilisateur_id")
-     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="recette")
      */
     private $utilisateur;
 
     /**
-     * @ORM\JoinTable(name="symptome_id")
-     * @ORM\ManyToMany(targetEntity="Symptome")
+     * @ORM\JoinTable(name="recette_symptome")
+     * @ORM\ManyToMany(targetEntity="Symptome", inversedBy="recette")
      */
     private $symptome;
     
 // ================================= 
     
     /**
-     * @ORM\JoinTable(name="produit_id")
-     * @ORM\ManyToMany(targetEntity="Produit")
+     * @ORM\JoinTable(name="recette_produit")
+     * @ORM\ManyToMany(targetEntity="Produit", inversedBy="recette")
      */
     private $produit;
     

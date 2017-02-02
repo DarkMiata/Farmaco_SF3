@@ -108,4 +108,11 @@ class Categorie
     {
         return $this->produit;
     }
+
+public function __toString()
+{
+  return $this->nom;
 }
+
+}
+

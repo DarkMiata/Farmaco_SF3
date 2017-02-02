@@ -35,7 +35,7 @@ class Produit
     
     /**
      * @ORM\JoinTable(name="categorie_id")
-     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="produit")
      */
     private $categorie;
 // =================================  
@@ -212,4 +212,10 @@ class Produit
     {
         return $this->categorie;
     }
+    
+        public function __toString()
+{
+  return $this->nom;
+}
+    
 }
