@@ -3,11 +3,15 @@
 {% block title %}AppBundle:Filtre:listerRecettesParSymptomeProduit{% endblock %}
 
 {% block body %}
-  <h1>recherche:</h1>
+  <h2>recherche:</h2>
   <br>
   {{ form(monForm) }}
-
-  <h1>résultats:</h1>
+  <hr>
+  <br>
+  Filtre par Produit: {{ filtreProd }} <br>
+  Filtre par symptome: {{ filtreSympt }} <br>
+  <hr>
+  <h2>résultats:</h2>
   <br>
   {% for rec in recettes %}
     {{ rec.nom }}<br>

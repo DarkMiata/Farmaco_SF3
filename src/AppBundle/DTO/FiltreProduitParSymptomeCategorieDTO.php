@@ -13,7 +13,7 @@ namespace AppBundle\DTO;
  *
  * @author Formation
  */
-class FiltrelProduitParSymptomeCategorieDTO {
+class FiltreProduitParSymptomeCategorieDTO {
   private $symptome;
   private $categorie;
   

@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Filtre:listerProduitsParSymptomeCategorie{% endblock %}
+
+{% block body %}
+  <h2>recherche:</h2>
+  <br>
+  {{ form(monForm) }}
+  <hr>
+  <br>
+  Filtre par symptome: {{ filtreSympt }} <br>
+  Filtre par catégorie: {{ filtreCat }} <br>
+  <hr>
+  <h2>résultats:</h2>
+  <br>
+  {% for prod in produits %}
+    {{ prod.nom }}<br>
+  {% endfor %}
+
+{% endblock %}
